@@ -6,7 +6,7 @@
 
 ---
 
-## **📌 Overview**
+## **Overview**
 
 - **Dataset Size:** 614 records  
 - **Features:** 12 input features + 1 target variable (`Loan_Status`)  
@@ -14,29 +14,29 @@
 
 ---
 
-## **🧹 Step 1: Data Cleaning**
+## **Step 1: Data Cleaning**
 
 - Renamed unclear columns for better readability  
 - Handled missing values using **mode imputation**  
 - Converted target labels: **`Y → 1`, `N → 0`**  
 - Applied **Label Encoding** to categorical features
 
-> ✅ Dataset is now clean and ready for model building
+> Dataset is now clean and ready for model building
 
 ---
 
-## **📊 Step 2: Exploratory Data Analysis (EDA)**
+## **Step 2: Exploratory Data Analysis (EDA)**
 
 - Class distribution in `Loan_Status` is **imbalanced**  
   - Approved (1): ~420  
   - Not Approved (0): ~190  
 - Visual plots helped understand the influence of features like `Credit_History`, `Education`, and `Income`
 
-> 📌 Important Insight: Imbalance may affect model performance and needs consideration.
+> Important Insight: Imbalance may affect model performance and needs consideration.
 
 ---
 
-## **🌳 Step 3: Decision Tree Classifier**
+## **Step 3: Decision Tree Classifier**
 
 - Trained a Decision Tree with controlled depth (`max_depth=4`)  
 - **Accuracy:** ~77%  
@@ -46,7 +46,7 @@
 
 ---
 
-## **🌲 Step 4: Random Forest Classifier**
+## **Step 4: Random Forest Classifier**
 
 - Used ensemble of 100 trees  
 - **Accuracy:** ~76%  
@@ -56,7 +56,7 @@
 
 ---
 
-## **✅ Step 5: Cross-Validation (5-Fold)**
+## **Step 5: Cross-Validation (5-Fold)**
 
 | Model            | Mean CV Accuracy |
 |------------------|------------------|
@@ -77,7 +77,8 @@
 
 ---
 
-## **📎 Key Takeaways**
+## **
+Key Takeaways**
 
 - Data preprocessing and encoding matter as much as model selection  
 - Ensemble models like Random Forest are useful for noisy or imbalanced data  
