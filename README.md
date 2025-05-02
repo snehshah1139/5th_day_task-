@@ -77,12 +77,50 @@
 
 ---
 
-## **
-Key Takeaways**
+## **Key Takeaways**
 
 - Data preprocessing and encoding matter as much as model selection  
 - Ensemble models like Random Forest are useful for noisy or imbalanced data  
 - Evaluation metrics beyond accuracy (like precision, recall) reveal the true model performance  
 - Visualizations and EDA help inform better model choices
+
+## **GRAPH VISUILZATIONS FOR WHOLE TASK
+
+![Screenshot (67)](https://github.com/user-attachments/assets/cddbe243-e89d-4c8c-9b45-da67338c53a7)
+
+Decision Tree Visualization - Insights
+The root node splits on Credit_History, indicating it is the most important feature for predicting loan approval.
+When Credit_History <= 0.5 (typically poor credit), most predictions are for loan rejection (class = No).
+When Credit_History > 0.5, features like CoapplicantIncome, Loan_Amount_Term, and Property_Area influence the decision.
+Branches with low Gini index (close to 0) show pure or nearly pure class distributions — high model confidence.
+Applicant financial factors like ApplicantIncome and LoanAmount are important at deeper levels.
+Tree depth and splits are well-controlled due to max_depth=4, helping reduce overfitting while still capturing patterns
+
+
+![Screenshot (68)](https://github.com/user-attachments/assets/8ef41062-3834-4413-9f66-d8a59aaa205d)
+
+Feature Importance Insights
+Credit_History is the most important feature, contributing the most to loan approval predictions.
+ApplicantIncome and LoanAmount are also strong predictors, indicating financial capability is a major factor.
+CoapplicantIncome plays a moderate role, especially in cases with joint applications.
+Loan_Amount_Term, Property_Area, and Dependents contribute to a lesser extent.
+Features like Married, Gender, Education, and Self_Employed have very low importance.
+These may not influence approval decisions significantly or may have been captured indirectly by other features.
+Focus for model tuning can be placed on top features to optimize performance and reduce noise.
+
+
+![Screenshot (69)](https://github.com/user-attachments/assets/c5c07c16-9ed2-45f6-9e74-166b34aeb390)
+
+Cross-Validation Score Comparison insights
+Cross-validation is used to check how well our model performs on different parts of the dataset.
+It helps us make sure the model is not just doing well on one test set but performs consistently overall.
+Average Accuracy Scores from 5-Fold Cross-Validation:
+Decision Tree Average Score: 0.7997 (≈ 80%)
+Random Forest Average Score: 0.7883 (≈ 79%)
+Insight:
+The Decision Tree model performed slightly better than the Random Forest model in cross-validation.
+This means the Decision Tree gave more consistent results across multiple parts of the dataset.
+Even though Random Forest is generally more powerful, in this case, the simpler Decision Tree worked just as well or even a bit better.
+✅ Conclusion: The Decision Tree is currently the better model for this loan approval prediction task based on average cross-validation accuracy.
 
 ---
